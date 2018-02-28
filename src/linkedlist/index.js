@@ -2,7 +2,16 @@
 // Implement classes Node and Linked Lists
 // See 'directions' document
 
-class Node {}
+class Node {
+  constructor(data, node) {
+    this.data = data;
+    this.next = node;
+  }
+
+  next() {
+    return this.next;
+  }
+}
 
 class LinkedList {}
 
