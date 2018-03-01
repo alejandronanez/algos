@@ -63,15 +63,7 @@ class LinkedList {
       return null;
     }
 
-    if (this.size() === 1) {
-      this.head = null;
-
-      return this.head;
-    }
-
     this.head = this.head.next;
-
-    return this.head;
   }
 
   removeLast() {
@@ -79,21 +71,21 @@ class LinkedList {
       return null;
     }
 
-    if (this.size() === 1) {
+    if (!this.head.next) {
       this.head = null;
 
-      return this.head;
+      return;
     }
 
-    let count = 1;
-    let node = this.head;
+    let previous = this.head;
+    let node = this.head.next;
 
-    while (count < this.size() - 1) {
-      count++;
+    while (node.next) {
+      previous = node;
       node = node.next;
     }
 
-    node.next = null;
+    previous.next = null;
   }
 }
 
