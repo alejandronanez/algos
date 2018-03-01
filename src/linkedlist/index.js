@@ -24,18 +24,18 @@ class LinkedList {
 
   size() {
     let initialItemInList = this.head;
-    let count = initialItemInList ? 1 : 0;
+    let count = 0;
 
-    if (!initialItemInList) {
-      return count;
-    }
-
-    while (initialItemInList.next) {
+    while (initialItemInList) {
       count++;
       initialItemInList = initialItemInList.next;
     }
 
     return count;
+  }
+
+  getFirst() {
+
   }
 }
 
