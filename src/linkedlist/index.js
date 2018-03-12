@@ -93,12 +93,29 @@ class LinkedList {
     const node = new Node(data);
 
     if (!lastNode) {
-      // this.head = node;
       this.insertFirst(data);
     } else {
       lastNode.next = node;
     }
 
+  }
+
+  getAt(position) {
+    if (position > this.size()) {
+      return null;
+    }
+
+    let positionCounter = 0;
+    let node = this.head;
+
+    while (node) {
+      if (positionCounter === position) {
+        return node;
+      }
+
+      node = node.next;
+      positionCounter++;
+    }
   }
 }
 
