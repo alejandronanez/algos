@@ -141,7 +141,7 @@ class LinkedList {
     const newNode = new Node(data);
     const targetNode = this.getAt(index);
     const previousNode = this.getAt(index - 1);
-    const lastNode = this.getAt(listSize - 1);
+    const lastNode = this.getLast();
 
     if (index > listSize) {
       lastNode.next = newNode;
