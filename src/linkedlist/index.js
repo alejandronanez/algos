@@ -56,15 +56,6 @@ class LinkedList {
 
   insertLast(data) {
     this.insertAt(data, this.size())
-    // const lastNode = this.getLast();
-    // const node = new Node(data);
-
-    // if (!lastNode) {
-    //   this.insertFirst(data);
-    // } else {
-    //   lastNode.next = node;
-    // }
-
   }
 
   getAt(index) {
@@ -131,6 +122,18 @@ class LinkedList {
 
     previousNode.next = newNode;
     newNode.next = targetNode;
+  }
+
+  forEach(fn) {
+    let node = this.head;
+    let index = 0;
+
+    while (node) {
+      fn(node, index);
+
+      node = node.next;
+      index++;
+    }
   }
 }
 
