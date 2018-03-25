@@ -55,7 +55,7 @@ class LinkedList {
   }
 
   insertLast(data) {
-    this.insertAt(data, this.size())
+    this.insertAt(data, this.size());
   }
 
   getAt(index) {
@@ -133,6 +133,14 @@ class LinkedList {
 
       node = node.next;
       index++;
+    }
+  }
+
+  *[Symbol.iterator]() {
+    let node = this.head;
+    while (node) {
+      yield node;
+      node = node.next;
     }
   }
 }
