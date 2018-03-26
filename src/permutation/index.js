@@ -4,16 +4,17 @@
  * My own solution
  */
 
- function stringHasher(string) {
-   return string
-    .split('')
-    .reduce((hashMap, char) => ({
+function stringHasher(string) {
+  return string.split('').reduce(
+    (hashMap, char) => ({
       ...hashMap,
       [char]: hashMap[char] ? hashMap[char] + 1 : 1
-    }), {});
- }
+    }),
+    {}
+  );
+}
 
- function permutation(stringA, stringB) {
+function permutation(stringA, stringB) {
   if (stringA.length !== stringB.length) {
     return false;
   }
@@ -28,6 +29,6 @@
   }
 
   return true;
- }
+}
 
- module.exports = permutation;
+module.exports = permutation;
