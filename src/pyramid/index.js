@@ -14,6 +14,15 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+function pyramid(n) {
+  const totalCharacters = (n * 2) - 1;
+
+  for (let i = 1; i <= n; i++) {
+    const spaces = n - i;
+    const pounds = totalCharacters - (spaces * 2);
+
+    console.log(`${' '.repeat(spaces)}${'#'.repeat(pounds)}${' '.repeat(spaces)}`);
+  }
+}
 
 module.exports = pyramid;
